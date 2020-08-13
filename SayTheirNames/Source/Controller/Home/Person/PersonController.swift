@@ -161,7 +161,6 @@ class PersonController: UIViewController {
         view.accessibilityIdentifier = "personView"
         self.network.fetchPersonDetails(with: person.identifier) { [weak self] result in
             guard let self = self else { return }
-            
             switch result {
             case .success(let response):
                 self.configure(with: response.person)
